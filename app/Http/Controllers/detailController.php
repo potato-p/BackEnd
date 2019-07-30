@@ -44,7 +44,11 @@ class detailController extends Controller
      */
     public function store(Request $request)
     {
-        $detail = detail::create($request->all());
+        $detail = detail::create([
+            'mokit_id'=>$request->mokit_id,
+            'penjualan_id'=>$request->penjualan_id,
+            'jumlah'=>$request->jumlah,
+        ]);
 
         return redirect()->route('penjualan.show',['id' => $detail->penjualan_id]);
     }

@@ -50,7 +50,7 @@ class jualController extends Controller
             'karyawan_id'=>$request->karyawan_id,
             'pelanggan_id'=>$request->pelanggan_id,
         ]);
-        return $jual->no;
+        // return $jual->no;
         // return redirect()->route('penjualan.show',['no'=>$jual->no]);
         return redirect()->route('penjualan.show', ['id'=>$jual->no]);
 
@@ -70,7 +70,7 @@ class jualController extends Controller
         $karyawan = karyawan::all();
         $detail = detail::all();
         return view('penjualan.show')
-        ->with('penjualan',$jual)
+        ->with('jual',$jual)
         ->with('mokit',$mokit)
         ->with('stok',$stok)
         ->with('karyawan',$karyawan)

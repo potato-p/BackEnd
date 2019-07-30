@@ -17,7 +17,7 @@ class detail extends Model
 
     public function jual()
     {
-    	return $this->penjualan('App\model\jual', 'penjualan_id');
+    	return $this->belongsTo('App\model\jual', 'penjualan_id');
     }
 	public function mokit()
     {

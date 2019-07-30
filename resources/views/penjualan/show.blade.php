@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +9,7 @@
 </head>
 <body>
 	<div class="container">
-	<h1>Detail Penjualan</h1>
-	<button type="button" class="btn btn-primary" data-toogle="modal" data-target="#exampleModal">Add</button>
-
-	@extends('layouts.app')
-
-@section('content')
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,11 +18,11 @@
 </head>
 <body>
 	<h1>DETAIL PENJUALAN</h1>
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  	Tambahkan
 </button>
 <div class="container">
-<h5>Tanggal : {{$jual->date}}</h5>
+<h5>Tanggal : {{$jual->tanggal}}</h5>
 <h5>Nama Staff : {{$jual->karyawan->nama}}</h5>
 <h5>Nama Pelanggan : {{$jual->pelanggan->nama}}</h5>
 </div>
@@ -74,7 +72,7 @@
             <select name="mokit_id" class="form-control">
                 <option value="">Pilih</option>
                 @foreach($stok as $a)
-                <option value="{{ $a->id }}">{{ $a->stok->mokit_id->nama }} - Rp. {{ $b->h_jual }}</option>
+                <option value="{{ $a->id }}">{{ $a->mokit->nama }} - Rp. {{ $a->h_jual }}</option>
                 @endforeach
             </select>
         </div>
@@ -92,8 +90,6 @@
   </div>
 </div>
 
-		
-			
 </body>
 </html>
 @endsection
